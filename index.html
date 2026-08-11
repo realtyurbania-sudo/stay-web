@@ -1,0 +1,601 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stay · Vivir y alquilar redefinido | Ciudad de Panamá</title>
+<meta name="description" content="Stay — un edificio de lujo que redefine la experiencia de vivir y alquilar en el corazón de la Ciudad de Panamá. Por Urbania Developer & Emporium Developers.">
+<style>
+:root{
+  --ink:#1b1917; --ink-soft:#2c2a26;
+  --taupe:#9e978a; --taupe-d:#7d7568; --bronze:#a8895c; --bronze-d:#8c6f45;
+  --paper:#f6f4ef; --stone:#ece7dd; --card:#fbfaf6;
+  --line:#ddd6c9; --line-dk:rgba(255,255,255,.16);
+  --muted:#6e685e; --muted-lt:rgba(255,255,255,.68);
+  --disp:"Didot","Bodoni 72","Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Avenir Next","Avenir","Segoe UI","Helvetica Neue",Arial,sans-serif;
+  --wrap:1240px;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--paper);
+  -webkit-font-smoothing:antialiased;line-height:1.6;font-weight:400;letter-spacing:.01em}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{font-family:var(--disp);font-weight:400;line-height:1.05;margin:0;letter-spacing:.005em;text-wrap:balance}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 clamp(20px,5vw,56px)}
+.eyebrow{font-family:var(--sans);text-transform:uppercase;letter-spacing:.34em;font-size:.7rem;font-weight:600;color:var(--taupe-d)}
+.eyebrow.on-dark{color:var(--taupe)}
+.rule{width:38px;height:1px;background:var(--bronze);margin:0 0 26px}
+.rule.c{margin-left:auto;margin-right:auto}
+
+/* logo wordmark (approx del logotipo Stay) */
+.logo{font-family:var(--sans);font-weight:600;letter-spacing:.02em;text-transform:lowercase;
+  font-size:1.5rem;line-height:1;display:inline-block}
+.logo b{font-weight:600}
+
+/* ---------- nav ---------- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:background .4s,box-shadow .4s,color .4s;color:#fff}
+header.nav .bar{display:flex;align-items:center;justify-content:space-between;height:74px}
+header.nav .links{display:flex;gap:30px;align-items:center}
+header.nav .links a{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;opacity:.86;transition:opacity .25s}
+header.nav .links a:hover{opacity:1}
+.nav-cta{border:1px solid currentColor;padding:.5rem 1.1rem;border-radius:2px;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase}
+header.nav.solid{background:rgba(246,244,239,.92);backdrop-filter:blur(10px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
+header.nav.solid .nav-cta{border-color:var(--bronze);color:var(--bronze-d)}
+.burger{display:none;background:none;border:0;color:inherit;font-size:1.5rem;cursor:pointer}
+
+/* ---------- hero ---------- */
+.hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
+.hero__bg{position:absolute;inset:0;background:#111 center/cover no-repeat}
+.hero__bg::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(15,13,11,.55) 0%,rgba(15,13,11,.15) 34%,rgba(15,13,11,.62) 82%,rgba(15,13,11,.9) 100%)}
+.hero__inner{position:relative;z-index:2;padding-bottom:clamp(48px,9vh,110px);padding-top:120px;width:100%}
+.hero h1{font-size:clamp(2.9rem,7.4vw,6.4rem);letter-spacing:.01em;max-width:16ch;font-weight:400}
+.hero h1 em{font-style:italic;color:#efe6d4}
+.hero .lede{max-width:52ch;margin:1.6rem 0 2.2rem;font-size:clamp(1rem,1.5vw,1.18rem);color:rgba(255,255,255,.9);font-weight:300}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.6rem;font-family:var(--sans);font-size:.8rem;letter-spacing:.16em;
+  text-transform:uppercase;padding:1.05rem 1.9rem;border-radius:2px;transition:transform .25s,background .25s,color .25s;cursor:pointer;border:1px solid transparent}
+.btn-solid{background:var(--bronze);color:#fff}
+.btn-solid:hover{background:var(--bronze-d);transform:translateY(-2px)}
+.btn-ghost{border-color:rgba(255,255,255,.55);color:#fff}
+.btn-ghost:hover{background:rgba(255,255,255,.12)}
+.hero .scroll{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);z-index:2;
+  font-size:.62rem;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.7);writing-mode:vertical-rl}
+
+/* ---------- section shells ---------- */
+section{position:relative}
+.sec{padding:clamp(72px,11vh,140px) 0}
+.sec.dark{background:var(--ink);color:#fff}
+.sec.stone{background:var(--stone)}
+.kick-h{font-size:clamp(2rem,4.4vw,3.5rem);letter-spacing:.01em;max-width:20ch}
+.dark .kick-h{color:#fff}
+.lead{font-size:clamp(1.05rem,1.5vw,1.22rem);color:var(--muted);max-width:60ch;font-weight:300;line-height:1.75}
+.dark .lead{color:var(--muted-lt)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,72px);align-items:center}
+.two.rev>.media{order:2}
+.media{overflow:hidden;border-radius:3px;position:relative}
+.media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.media:hover img{transform:scale(1.04)}
+figcaption{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--taupe-d);margin-top:.7rem}
+.dark figcaption{color:var(--taupe)}
+
+/* ---------- concept stat strip ---------- */
+.pillars{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,54px);margin-top:56px}
+.pillars .p h3{font-size:1.35rem;margin-bottom:.5rem}
+.pillars .p p{color:var(--muted);font-size:.96rem;font-weight:300;margin:0}
+.pillars .p .ic{width:30px;height:1.5px;background:var(--bronze);margin-bottom:16px}
+
+/* ---------- location ---------- */
+.loc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(34px,5vw,80px);align-items:start}
+.metro{display:flex;align-items:baseline;gap:14px;border-top:1px solid var(--line-dk);padding:22px 0}
+.metro b{font-family:var(--disp);font-size:2.2rem;color:var(--taupe);line-height:1}
+.poi{list-style:none;margin:26px 0 0;padding:0;columns:2;column-gap:44px}
+.poi li{break-inside:avoid;display:flex;justify-content:space-between;gap:12px;padding:11px 0;border-bottom:1px solid var(--line-dk);font-size:.92rem;color:rgba(255,255,255,.82)}
+.poi li span:last-child{color:var(--taupe);white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* ---------- gallery grid ---------- */
+.gal{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-top:52px}
+.gal .cell{overflow:hidden;border-radius:3px;position:relative;min-height:200px}
+.gal .cell img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.gal .cell:hover img{transform:scale(1.05)}
+.gal .cap{position:absolute;left:16px;bottom:14px;color:#fff;z-index:2;
+  font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;text-shadow:0 1px 8px rgba(0,0,0,.6)}
+.gal .cell::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 55%,rgba(0,0,0,.5));opacity:.9}
+.c-6{grid-column:span 6}.c-7{grid-column:span 7}.c-5{grid-column:span 5}.c-4{grid-column:span 4}.c-8{grid-column:span 8}.c-12{grid-column:span 12}
+.tall{grid-row:span 2}
+
+/* ---------- investment ---------- */
+.inv-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:20px}
+.roi{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+.roi .card{background:var(--card);border:1px solid var(--line);border-radius:4px;padding:30px 28px;transition:transform .3s,box-shadow .3s}
+.roi .card:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px rgba(40,34,24,.4)}
+.roi .card.feat{background:var(--ink);color:#fff;border-color:var(--ink)}
+.roi .tag{font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--taupe-d)}
+.roi .card.feat .tag{color:var(--taupe)}
+.roi .big{font-family:var(--disp);font-size:3.2rem;line-height:1;margin:.4rem 0 .1rem}
+.roi .card.feat .big{color:#fff}
+.roi .sub{font-size:.82rem;color:var(--muted)}
+.roi .card.feat .sub{color:var(--muted-lt)}
+.roi ul{list-style:none;margin:18px 0 0;padding:16px 0 0;border-top:1px solid var(--line);font-size:.86rem}
+.roi .card.feat ul{border-color:var(--line-dk)}
+.roi li{display:flex;justify-content:space-between;padding:5px 0;color:var(--muted)}
+.roi .card.feat li{color:rgba(255,255,255,.8)}
+.roi li b{color:var(--ink);font-weight:600;font-variant-numeric:tabular-nums}
+.roi .card.feat li b{color:#fff}
+.facts{display:flex;flex-wrap:wrap;gap:38px;margin-top:8px}
+.facts .f b{font-family:var(--disp);font-size:2rem;display:block;line-height:1}
+.facts .f span{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.benefits{list-style:none;margin:34px 0 0;padding:0;display:grid;grid-template-columns:1fr 1fr;gap:14px 34px}
+.benefits li{padding-left:22px;position:relative;color:var(--muted);font-size:.96rem}
+.benefits li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;background:var(--bronze);border-radius:50%}
+
+/* ---------- panama ---------- */
+.pty{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:52px}
+.pty .p{position:relative;overflow:hidden;border-radius:3px;min-height:340px;display:flex;align-items:flex-end;color:#fff}
+.pty .p img{position:absolute;inset:0;height:100%;object-fit:cover}
+.pty .p::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.05),rgba(0,0,0,.72))}
+.pty .p .t{position:relative;z-index:2;padding:26px}
+.pty .p h3{font-size:1.5rem;margin-bottom:.4rem}
+.pty .p p{font-size:.88rem;color:rgba(255,255,255,.82);font-weight:300;margin:0}
+
+/* ---------- connection ---------- */
+.conn{display:grid;grid-template-columns:repeat(4,1fr);gap:34px;margin-top:56px}
+.conn .c .n{font-family:var(--disp);font-size:1.1rem;color:var(--taupe);margin-bottom:10px}
+.conn .c h3{font-size:1.28rem;margin-bottom:.5rem}
+.conn .c p{font-size:.9rem;color:var(--muted-lt);font-weight:300;margin:0}
+.conn .c{border-top:1px solid var(--line-dk);padding-top:22px}
+
+/* ---------- developers ---------- */
+.devs{display:flex;gap:clamp(28px,6vw,90px);align-items:center;justify-content:center;flex-wrap:wrap;margin-top:44px}
+.devs .d{text-align:center}
+.devs .d .nm{font-family:var(--disp);font-size:1.7rem}
+.devs .d .rl{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-top:6px}
+.devs .x{font-family:var(--disp);font-size:1.6rem;color:var(--taupe)}
+
+/* ---------- contact / cta ---------- */
+.cta-final{text-align:center}
+.cta-final h2{font-size:clamp(2.2rem,5vw,4rem);max-width:18ch;margin:0 auto}
+.cta-final .lead{margin:1.4rem auto 2.4rem}
+
+/* ---------- footer ---------- */
+footer{background:#131211;color:rgba(255,255,255,.6);padding:64px 0 40px;font-size:.86rem}
+footer .top{display:flex;justify-content:space-between;gap:30px;flex-wrap:wrap;align-items:flex-start;
+  border-bottom:1px solid var(--line-dk);padding-bottom:34px;margin-bottom:26px}
+footer a:hover{color:#fff}
+footer .logo{color:#fff;margin-bottom:14px}
+footer .fcol h4{font-family:var(--sans);text-transform:uppercase;letter-spacing:.2em;font-size:.7rem;color:var(--taupe);margin:0 0 14px}
+footer .fcol p,footer .fcol a{display:block;margin:6px 0;color:rgba(255,255,255,.6)}
+
+/* logo swap (blanco en hero, ink al hacer scroll) */
+.logo img{height:24px;width:auto;display:block}
+.logo .lg-i{display:none}
+header.nav.solid .logo .lg-w{display:none}
+header.nav.solid .logo .lg-i{display:block}
+/* link Connection diferenciado */
+.link-conn{color:var(--bronze)!important;opacity:1!important;font-weight:600;display:inline-flex;align-items:center;gap:.4em}
+.link-conn::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--bronze);display:inline-block}
+header.nav.solid .link-conn{color:var(--bronze-d)!important}
+header.nav.solid .link-conn::before{background:var(--bronze-d)}
+/* logos de desarrolladores */
+.devs img{width:auto;object-fit:contain;opacity:.92}
+/* ---------- connection (interactivo) ---------- */
+.conn-head{display:grid;grid-template-columns:1fr auto;gap:clamp(30px,5vw,70px);align-items:center;margin-bottom:8px}
+.conn-icon svg{width:clamp(72px,9vw,104px);height:auto}
+.conn-x{margin-top:clamp(38px,6vw,60px)}
+.conn-tabs{display:flex;flex-wrap:wrap;gap:6px 26px;border-bottom:1px solid var(--line-dk)}
+.conn-tab{font-family:var(--sans);font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:rgba(255,255,255,.55);
+  background:none;border:0;border-bottom:2px solid transparent;padding:14px 2px;margin-bottom:-1px;cursor:pointer;transition:color .25s,border-color .25s}
+.conn-tab:hover{color:#fff}
+.conn-tab.is-on{color:var(--bronze);border-color:var(--bronze)}
+.conn-panel{display:none;grid-template-columns:1.02fr .98fr;gap:clamp(28px,5vw,64px);align-items:center;padding-top:clamp(30px,5vw,48px)}
+.conn-panel.is-on{display:grid;animation:cfade .5s ease}
+@keyframes cfade{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+.conn-media{margin:0;border-radius:4px;overflow:hidden;aspect-ratio:4/3}
+.conn-media img{width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.conn-panel.is-on:hover .conn-media img{transform:scale(1.04)}
+.conn-body h3{font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:16px}
+.conn-body ul{list-style:none;margin:0;padding:0}
+.conn-body li{padding:16px 0;border-top:1px solid var(--line-dk);color:rgba(255,255,255,.68);font-weight:300;font-size:.96rem;line-height:1.55}
+.conn-body li b{color:#fff;font-weight:400;display:block;font-family:var(--disp);font-size:1.15rem;margin-bottom:4px}
+/* ---------- amenidades (interactivo) ---------- */
+.amen{display:flex;flex-direction:column;gap:16px;margin-top:clamp(38px,6vw,56px)}
+.amen-stage{position:relative;margin:0;border-radius:4px;overflow:hidden;aspect-ratio:16/9;background:#0d0c0b}
+.amen-img{width:100%;height:100%;object-fit:cover;transition:opacity .4s ease}
+.amen-cap{position:absolute;inset:auto 0 0 0;padding:clamp(1.7rem,4vw,3rem) clamp(1.4rem,3vw,2.4rem) clamp(1.3rem,3vw,1.9rem);
+  background:linear-gradient(180deg,transparent,rgba(13,12,11,.12) 42%,rgba(13,12,11,.9));color:#fff;display:flex;flex-direction:column;gap:.35rem}
+.amen-name{font-family:var(--disp);font-size:clamp(1.5rem,3.2vw,2.3rem)}
+.amen-desc{font-size:clamp(.9rem,1.3vw,1.02rem);color:rgba(255,255,255,.86);max-width:60ch;font-weight:300;line-height:1.6}
+.amen-tabs{display:flex;gap:10px;overflow-x:auto;padding-bottom:8px;-webkit-overflow-scrolling:touch}
+.amen-tab{flex:0 0 auto;width:132px;border:1px solid var(--line-dk);border-radius:4px;overflow:hidden;cursor:pointer;background:none;padding:0;transition:border-color .25s,transform .25s}
+.amen-tab img{width:100%;height:74px;object-fit:cover;display:block}
+.amen-tab span{display:block;font-family:var(--sans);font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:rgba(255,255,255,.64);padding:9px 6px;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.amen-tab:hover{border-color:var(--taupe);transform:translateY(-2px)}
+.amen-tab.is-on{border-color:var(--bronze)}
+.amen-tab.is-on span{color:var(--bronze)}
+
+@media(max-width:900px){
+  .conn-head,.conn-panel{grid-template-columns:1fr}
+  .amen-tab{width:116px}
+  .conn-icon{display:none}
+  .conn-media{aspect-ratio:16/10}
+  header.nav .links{display:none}
+  .burger{display:block}
+  .two,.loc-grid,.inv-head,.inv-head{grid-template-columns:1fr;gap:34px}
+  .two.rev>.media{order:0}
+  .pillars,.roi,.pty,.conn{grid-template-columns:1fr}
+  .benefits{grid-template-columns:1fr}
+  .poi{columns:1}
+  .gal{grid-template-columns:repeat(6,1fr)}
+  .c-6,.c-7,.c-5,.c-4,.c-8{grid-column:span 6}
+  .tall{grid-row:auto}
+}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}.media img,.gal .cell img{transition:none}}
+</style>
+
+<header class="nav" id="nav">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="Stay">
+      <img class="lg-w" src="assets/logos/stay-white.png" alt="Stay">
+      <img class="lg-i" src="assets/logos/stay-ink.png" alt="Stay">
+    </a>
+    <nav class="links">
+      <a href="#proyecto">El proyecto</a>
+      <a href="#ubicacion">Ubicación</a>
+      <a href="#espacios">Espacios</a>
+      <a href="#amenidades">Amenidades</a>
+      <a href="#inversion">Inversión</a>
+      <a class="link-conn" href="#connection">Connection</a>
+      <a class="nav-cta" href="#contacto">Contacto</a>
+    </nav>
+    <button class="burger" aria-label="Menú">☰</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero__bg" style="background-image:url(assets/web/hero-night.webp)"></div>
+  <div class="hero__inner">
+    <div class="wrap">
+      <p class="eyebrow on-dark" style="margin-bottom:22px">Urbania Developer &amp; Emporium Developers</p>
+      <h1>Vivir y alquilar, <em>redefinido.</em></h1>
+      <p class="lede">Un edificio de lujo que redefine la experiencia de vivir y alquilar en espacios de alto nivel, en el corazón de la Ciudad de Panamá.</p>
+      <div class="cta-row">
+        <a class="btn btn-solid" href="#inversion">Invertir en Stay</a>
+        <a class="btn btn-ghost" href="#espacios">Conocer el proyecto</a>
+      </div>
+    </div>
+  </div>
+  <span class="scroll">Scroll</span>
+</section>
+
+<!-- CONCEPTO -->
+<section class="sec" id="proyecto">
+  <div class="wrap">
+    <div class="two">
+      <div>
+        <div class="rule"></div>
+        <p class="eyebrow" style="margin-bottom:20px">El concepto</p>
+        <h2 class="kick-h">Más que un alojamiento, un refugio sofisticado.</h2>
+        <p class="lead" style="margin-top:24px">Stay brinda el confort de un hogar, diseñado para satisfacer las necesidades de los inquilinos más exigentes en estancias cortas o largas. Interiores elegantes y funcionales, de diseño minimalista y materiales de alta calidad, que integran tecnología de punta y elementos sostenibles.</p>
+      </div>
+      <figure class="media" style="aspect-ratio:4/5">
+        <img src="assets/web/int-bed-view.webp" alt="Interior de un apartamento Stay con vista a la ciudad">
+      </figure>
+    </div>
+
+    <div class="pillars">
+      <div class="p"><div class="ic"></div><h3>Estilo minimalista</h3><p>Diseño interior sereno y sofisticado que equilibra comodidad y estilo con mobiliario funcional.</p></div>
+      <div class="p"><div class="ic"></div><h3>Cocina equipada</h3><p>Cocinas totalmente equipadas que integran estilo y funcionalidad con electrodomésticos modernos.</p></div>
+      <div class="p"><div class="ic"></div><h3>Mobiliario integrado</h3><p>Armarios, cama y closets optimizan el espacio con materiales de alta calidad, atemporales.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- UBICACIÓN -->
+<section class="sec dark" id="ubicacion">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="eyebrow on-dark" style="margin-bottom:18px">Ubicación estratégica</p>
+    <div class="loc-grid">
+      <div>
+        <h2 class="kick-h">En el corazón de la ciudad, sobre la Avenida Federico Boyd.</h2>
+        <div class="metro" style="margin-top:30px">
+          <b>20</b><div><div style="color:#fff;font-size:1.02rem">pasos a la Estación Iglesia del Carmen</div><div style="color:var(--muted-lt);font-size:.86rem">Línea 1 del Metro · trasbordo a Línea 2 · conexión al Aeropuerto Internacional</div></div>
+        </div>
+        <p class="lead" style="margin-top:20px">Movilidad excepcional hacia las principales áreas recreativas, comerciales y de negocios de Panamá, a solo pasos del complejo.</p>
+      </div>
+      <div>
+        <p class="eyebrow on-dark">12 lugares destacados</p>
+        <ul class="poi">
+          <li><span>Iglesia del Carmen</span><span>2 min</span></li>
+          <li><span>Universidad de Panamá</span><span>6 min</span></li>
+          <li><span>Calle Uruguay</span><span>7 min</span></li>
+          <li><span>Supermercado Rey</span><span>7 min</span></li>
+          <li><span>Hospital Nacional</span><span>9 min</span></li>
+          <li><span>Parque Urracá</span><span>9 min</span></li>
+          <li><span>Supermercado Riba Smith</span><span>10 min</span></li>
+          <li><span>Soho Mall</span><span>10 min</span></li>
+          <li><span>Hospital Johns Hopkins</span><span>12 min</span></li>
+          <li><span>Hilton Panamá</span><span>13 min</span></li>
+          <li><span>C.C. Multiplaza</span><span>15 min</span></li>
+          <li><span>Parque Andrés Bello</span><span>15 min</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPACIOS / INTERIORES -->
+<section class="sec" id="espacios">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="eyebrow" style="margin-bottom:18px">Los espacios</p>
+    <h2 class="kick-h">Interiores pensados al detalle.</h2>
+    <p class="lead" style="margin-top:22px;max-width:64ch">Cada apartamento maximiza la comodidad en un espacio integral y flexible: descanso, cocina y trabajo conviven en una estética elegante y atemporal.</p>
+    <div class="gal">
+      <div class="cell c-7 tall"><img src="assets/web/int-bed-view.webp" alt="Recámara de un apartamento Stay con vista a la ciudad"><span class="cap">Recámara con vista</span></div>
+      <div class="cell c-5"><img src="assets/web/int-bedroom.webp" alt="Recámara del apartamento modelo"><span class="cap">Descanso</span></div>
+      <div class="cell c-5"><img src="assets/web/int-sala.webp" alt="Sala-comedor con cocina equipada"><span class="cap">Sala-comedor</span></div>
+      <div class="cell c-6"><img src="assets/web/int-recamara2.webp" alt="Recámara con cocina integrada"><span class="cap">Recámara &amp; cocina</span></div>
+      <div class="cell c-6"><img src="assets/web/int-living.webp" alt="Espacio integral con mobiliario funcional"><span class="cap">Espacio integral</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- AMENIDADES -->
+<section class="sec dark" id="amenidades">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="eyebrow on-dark" style="margin-bottom:18px">Amenidades</p>
+    <div class="inv-head">
+      <h2 class="kick-h">Un edificio pensado para vivir mejor.</h2>
+      <p class="lead">Desde un rooftop con piscina y bar hasta coworking, gimnasio y spa — cada espacio está diseñado para desconectar, trabajar y celebrar, con las mejores vistas de la ciudad.</p>
+    </div>
+    <div class="amen" data-amen>
+      <figure class="amen-stage">
+        <img class="amen-img" src="assets/web/roof-pool.webp" alt="Amenidad de Stay">
+        <figcaption class="amen-cap">
+          <b class="amen-name">Piscina</b>
+          <span class="amen-desc">Piscina en el rooftop con vista al skyline de Panamá, para refrescarte y relajarte en las alturas.</span>
+        </figcaption>
+      </figure>
+      <div class="amen-tabs" role="tablist">
+        <button class="amen-tab is-on" data-img="assets/web/roof-pool.webp" data-name="Piscina" data-desc="Piscina en el rooftop con vista al skyline de Panamá, para refrescarte y relajarte en las alturas."><img src="assets/web/roof-pool.webp" alt="" loading="lazy"><span>Piscina</span></button>
+        <button class="amen-tab" data-img="assets/web/roof-bar.webp" data-name="Rooftop bar" data-desc="Un bar en la azotea con ambiente sofisticado, ideal para reuniones y atardeceres inolvidables."><img src="assets/web/roof-bar.webp" alt="" loading="lazy"><span>Rooftop bar</span></button>
+        <button class="amen-tab" data-img="assets/web/roof-terrace.webp" data-name="Terraza" data-desc="Terrazas al aire libre con vistas panorámicas de la ciudad, la bahía y la catedral."><img src="assets/web/roof-terrace.webp" alt="" loading="lazy"><span>Terraza</span></button>
+        <button class="amen-tab" data-img="assets/web/coworking.webp" data-name="Coworking" data-desc="Espacios de trabajo compartidos, cómodos y luminosos, para trabajar sin salir de casa."><img src="assets/web/coworking.webp" alt="" loading="lazy"><span>Coworking</span></button>
+        <button class="amen-tab" data-img="assets/web/gym.webp" data-name="Gimnasio" data-desc="Gimnasio totalmente equipado con vistas a la ciudad, para mantener tu rutina activa."><img src="assets/web/gym.webp" alt="" loading="lazy"><span>Gimnasio</span></button>
+        <button class="amen-tab" data-img="assets/web/spa.webp" data-name="Spa &amp; sauna" data-desc="Un espacio de bienestar con sauna, ideal para desconectar y revitalizar cuerpo y mente."><img src="assets/web/spa.webp" alt="" loading="lazy"><span>Spa &amp; sauna</span></button>
+        <button class="amen-tab" data-img="assets/web/lounge.webp" data-name="Lounge" data-desc="Áreas sociales y lounge para compartir, reunirte y relajarte con la comunidad."><img src="assets/web/lounge.webp" alt="" loading="lazy"><span>Lounge</span></button>
+        <button class="amen-tab" data-img="assets/web/roof-chess.webp" data-name="Zona social" data-desc="Áreas recreativas en el rooftop, con ajedrez gigante y espacios para socializar al aire libre."><img src="assets/web/roof-chess.webp" alt="" loading="lazy"><span>Zona social</span></button>
+        <button class="amen-tab" data-img="assets/web/lobby-entrance.webp" data-name="Lobby &amp; acceso" data-desc="Un acceso y lobby de diseño elegante que dan la bienvenida al edificio."><img src="assets/web/lobby-entrance.webp" alt="" loading="lazy"><span>Lobby</span></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INVERSIÓN -->
+<section class="sec stone" id="inversion">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="eyebrow" style="margin-bottom:18px">Análisis de rentabilidad</p>
+    <div class="inv-head">
+      <h2 class="kick-h">Una inversión rentable, de alta demanda.</h2>
+      <div>
+        <div class="facts">
+          <div class="f"><b>33.24 m²</b><span>Desde · aprox.</span></div>
+          <div class="f"><b>1 · 1</b><span>Recámara · Baño</span></div>
+          <div class="f"><b>$120,000</b><span>Desde · amoblado</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roi">
+      <div class="card">
+        <span class="tag">Conservador</span>
+        <div class="big">8.18<span style="font-size:1.4rem">%</span></div>
+        <div class="sub">Retorno anual (ROI) · 65% ocupación</div>
+        <ul><li>Renta mensual <b>$818</b></li><li>Renta anual <b>$9,818</b></li><li>Tarifa promedio <b>$72</b></li></ul>
+      </div>
+      <div class="card feat">
+        <span class="tag">Base</span>
+        <div class="big">9.71<span style="font-size:1.4rem">%</span></div>
+        <div class="sub">Retorno anual (ROI) · 75% ocupación</div>
+        <ul><li>Renta mensual <b>$971</b></li><li>Renta anual <b>$11,652</b></li><li>Tarifa promedio <b>$72</b></li></ul>
+      </div>
+      <div class="card">
+        <span class="tag">Optimista</span>
+        <div class="big">11.24<span style="font-size:1.4rem">%</span></div>
+        <div class="sub">Retorno anual (ROI) · 85% ocupación</div>
+        <ul><li>Renta mensual <b>$1,124</b></li><li>Renta anual <b>$13,486</b></li><li>Tarifa promedio <b>$72</b></li></ul>
+      </div>
+    </div>
+
+    <div style="margin-top:52px;max-width:70ch">
+      <p class="eyebrow" style="margin-bottom:16px">Beneficios para propietarios</p>
+      <ul class="benefits">
+        <li>Ingresos pasivos sostenibles</li>
+        <li>Administración integral y sencilla</li>
+        <li>Revalorización de la propiedad</li>
+        <li>Alta demanda y diversidad de servicios</li>
+      </ul>
+      <p style="font-size:.74rem;color:var(--muted);margin-top:26px">*Escenarios proyectados con fines ilustrativos. Management fee Stay 20%. La rentabilidad final depende de la ocupación, tarifas y costos operativos. Sujeto a los documentos de oferta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- POR QUÉ PANAMÁ -->
+<section class="sec" id="panama">
+  <div class="wrap">
+    <div class="rule"></div>
+    <p class="eyebrow" style="margin-bottom:18px">Invertir en Panamá</p>
+    <div class="inv-head">
+      <h2 class="kick-h">Un destino ideal para la inversión inmobiliaria.</h2>
+      <p class="lead">Economía estable y 100% dolarizada, posición estratégica como centro logístico y un destino turístico y de negocios en constante crecimiento.</p>
+    </div>
+    <div class="pty">
+      <div class="p"><img src="assets/web/pty-skyline.webp" alt="Skyline de Ciudad de Panamá"><div class="t"><h3>Hub de las Américas</h3><p>Puerta de entrada entre Norte, Centro y Suramérica, con demanda constante de propiedades de lujo para alquiler.</p></div></div>
+      <div class="p"><img src="assets/web/pty-casco.webp" alt="Casco Antiguo de Panamá"><div class="t"><h3>Turismo &amp; estilo de vida</h3><p>Playas, barrios históricos, gastronomía y cultura conviven con una moderna infraestructura urbana.</p></div></div>
+      <div class="p"><img src="assets/web/pty-bridge.webp" alt="Puente de las Américas"><div class="t"><h3>Incentivos al inversor</h3><p>Ventajas fiscales y trámites migratorios ágiles hacen de Panamá un lugar accesible y rentable.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- STAY CONNECTION -->
+<section class="sec dark" id="connection">
+  <div class="wrap">
+    <div class="conn-head">
+      <div>
+        <div class="rule"></div>
+        <p class="eyebrow on-dark" style="margin-bottom:18px">Stay Con·nection</p>
+        <h2 class="kick-h">Conoce lo mejor de Panamá y vive experiencias únicas.</h2>
+        <p class="lead" style="margin-top:22px">Más que un servicio, una forma de vivir la ciudad. Stay Connection conecta a nuestros residentes e inquilinos con lo mejor de Panamá — cultura, bienestar, sabores y celebraciones — transformando cada día en una experiencia única, más allá de tu apartamento.</p>
+      </div>
+      <div class="conn-icon" aria-hidden="true">
+        <svg viewBox="0 0 100 100" fill="none" stroke="var(--bronze)" stroke-width="2.4">
+          <circle cx="50" cy="17" r="11"/><circle cx="19" cy="73" r="11"/><circle cx="81" cy="73" r="11"/>
+          <path d="M45 27 30 63M55 27 70 63M30 73h40" stroke-linecap="round"/>
+        </svg>
+      </div>
+    </div>
+
+    <div class="conn-x" data-conn>
+      <div class="conn-tabs" role="tablist">
+        <button class="conn-tab is-on" data-i="0" role="tab">01 · Explora Panamá</button>
+        <button class="conn-tab" data-i="1" role="tab">02 · Bienestar &amp; naturaleza</button>
+        <button class="conn-tab" data-i="2" role="tab">03 · Delicias gastronómicas</button>
+        <button class="conn-tab" data-i="3" role="tab">04 · Eventos &amp; festividades</button>
+      </div>
+
+      <div class="conn-panel is-on" data-panel="0">
+        <figure class="conn-media"><img src="assets/web/conn-explora.webp" alt="Casco Antiguo colonial de Panamá" loading="lazy"></figure>
+        <div class="conn-body">
+          <h3>Explora Panamá</h3>
+          <ul>
+            <li><b>Visitas a sitios históricos</b>Descubre la maravilla del Canal de Panamá y la rica historia de sus museos.</li>
+            <li><b>Arquitectura urbana</b>El Casco Antiguo colonial, Bella Vista y su art déco, y la Iglesia del Carmen neogótica.</li>
+            <li><b>Rutas escénicas</b>Caminatas guiadas y recorridos por las locaciones y paisajes más emblemáticos.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="conn-panel" data-panel="1">
+        <figure class="conn-media"><img src="assets/web/conn-bienestar.webp" alt="Naturaleza y parques de Panamá" loading="lazy"></figure>
+        <div class="conn-body">
+          <h3>Bienestar &amp; naturaleza</h3>
+          <ul>
+            <li><b>Yoga y meditación</b>Sesiones al amanecer en el rooftop o en parques cercanos para revitalizar la mente.</li>
+            <li><b>Ciclismo urbano</b>Recorridos por la Cinta Costera, el Casco Antiguo y otras áreas icónicas.</li>
+            <li><b>Caminatas y senderismo</b>Paseos guiados por el Parque Urracá y rutas hacia áreas naturales cercanas.</li>
+            <li><b>Ejercicio al aire libre</b>Clases grupales de fitness en espacios abiertos, para un estilo de vida activo.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="conn-panel" data-panel="2">
+        <figure class="conn-media"><img src="assets/web/conn-delicias.webp" alt="Experiencia gastronómica" loading="lazy"></figure>
+        <div class="conn-body">
+          <h3>Delicias gastronómicas</h3>
+          <ul>
+            <li><b>Catas de vino y café</b>Disfruta los sabores más exclusivos de Panamá con nuestras catas guiadas.</li>
+            <li><b>Talleres gastronómicos</b>Aprende a preparar platos icónicos de la cocina local e internacional.</li>
+            <li><b>Degustaciones especiales</b>Eventos diseñados para deleitar tus sentidos y celebrar la riqueza culinaria.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="conn-panel" data-panel="3">
+        <figure class="conn-media"><img src="assets/web/conn-eventos.webp" alt="Festividades y folclore panameño" loading="lazy"></figure>
+        <div class="conn-body">
+          <h3>Eventos &amp; festividades</h3>
+          <ul>
+            <li><b>Celebraciones temáticas</b>Halloween, fiestas patrias y Navidad con actividades para conectar con la comunidad.</li>
+            <li><b>Fiestas y reuniones</b>Eventos únicos en el rooftop con bar y piscina, ideales para crear recuerdos.</li>
+            <li><b>Experiencias culturales</b>Música, tradiciones panameñas y talleres artesanales.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESARROLLADORES -->
+<section class="sec">
+  <div class="wrap" style="text-align:center">
+    <div class="rule c"></div>
+    <p class="eyebrow" style="margin-bottom:18px">Sinergia</p>
+    <h2 class="kick-h" style="margin:0 auto;max-width:24ch">Stay nace de la colaboración entre dos líderes del sector inmobiliario.</h2>
+    <p class="lead" style="margin:22px auto 0">La innovación y visión de Urbania Developer con la experiencia y precisión de Emporium Developers, en un concepto de lujo que redefine la inversión inmobiliaria de renta en Panamá.</p>
+    <div class="devs">
+      <img src="assets/logos/urbania-ink.png" alt="Urbania Developer" style="height:78px">
+      <div class="x">&amp;</div>
+      <img src="assets/logos/emporium-ink.png" alt="Emporium Developers" style="height:46px">
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="sec dark" id="contacto">
+  <div class="wrap cta-final">
+    <div class="rule c"></div>
+    <p class="eyebrow on-dark" style="margin-bottom:20px">Vive · Invierte · Conecta</p>
+    <h2>Tu lugar en el corazón de Panamá te espera.</h2>
+    <p class="lead" style="max-width:56ch">Agenda una asesoría y descubre por qué Stay es una de las oportunidades de inversión más atractivas de la ciudad.</p>
+    <div class="cta-row" style="justify-content:center">
+      <a class="btn btn-solid" href="#">Agendar asesoría</a>
+      <a class="btn btn-ghost" href="#">Descargar brochure</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <img src="assets/logos/stay-white.png" alt="Stay" style="height:26px;margin-bottom:16px">
+        <p style="max-width:34ch">Avenida Federico Boyd, Ciudad de Panamá.<br>Un edificio de Urbania Developer &amp; Emporium Developers.</p>
+      </div>
+      <div class="fcol"><h4>Explorar</h4><a href="#proyecto">El proyecto</a><a href="#ubicacion">Ubicación</a><a href="#rooftop">Rooftop</a><a href="#inversion">Inversión</a></div>
+      <div class="fcol"><h4>Contacto</h4><a href="#">ventas@stay.com.pa</a><a href="#">+507 000‑0000</a><a href="#">stay.com.pa</a></div>
+    </div>
+    <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.74rem;color:rgba(255,255,255,.4)">
+      <span>© 2026 Stay. Todos los derechos reservados.</span>
+      <span>Representaciones artísticas conceptuales, sujetas a cambios sin previo aviso.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var nav=document.getElementById('nav');
+  var onScroll=function(){ nav.classList.toggle('solid', window.scrollY>window.innerHeight*0.7); };
+  onScroll(); window.addEventListener('scroll',onScroll,{passive:true});
+
+  // Stay Connection — pestañas interactivas
+  var root=document.querySelector('[data-conn]');
+  if(root){
+    var tabs=[].slice.call(root.querySelectorAll('.conn-tab'));
+    var panels=[].slice.call(root.querySelectorAll('.conn-panel'));
+    tabs.forEach(function(t){ t.addEventListener('click',function(){
+      var i=t.getAttribute('data-i');
+      tabs.forEach(function(x){ x.classList.toggle('is-on', x===t); });
+      panels.forEach(function(p){ p.classList.toggle('is-on', p.getAttribute('data-panel')===i); });
+    }); });
+  }
+
+  // Amenidades — galería interactiva
+  var ar=document.querySelector('[data-amen]');
+  if(ar){
+    var stage=ar.querySelector('.amen-img'), nm=ar.querySelector('.amen-name'), ds=ar.querySelector('.amen-desc');
+    var atabs=[].slice.call(ar.querySelectorAll('.amen-tab'));
+    atabs.forEach(function(b){ var im=new Image(); im.src=b.getAttribute('data-img'); }); // preload
+    atabs.forEach(function(b){ b.addEventListener('click',function(){
+      atabs.forEach(function(x){ x.classList.toggle('is-on', x===b); });
+      nm.textContent=b.getAttribute('data-name'); ds.textContent=b.getAttribute('data-desc');
+      var src=b.getAttribute('data-img');
+      if(stage.getAttribute('src')===src) return;
+      stage.style.opacity='0';
+      setTimeout(function(){ stage.src=src; stage.style.opacity='1'; }, 160);
+    }); });
+  }
+})();
+</script>
