@@ -15,8 +15,17 @@ Sitio de una sola página para **STAY**, edificio de lujo de renta en Ciudad de 
 2. Selecciona este repo. Framework preset: **None**. Build command: *(vacío)*.
    Build output directory: **`/`** (raíz).
 3. Deploy. La rama `main` = producción; otras ramas (`taller`) = previews.
-4. Custom domains → agrega **stay.com.pa**.
+4. Custom domains → agrega **stay.com.pa** (y `www.stay.com.pa`).
 → Cada `git push` despliega automáticamente.
+
+> **Nota (verificado ago-2026):** `stay.com.pa` **ya está en Cloudflare** (DNS incluido),
+> así que al agregarlo como Custom Domain la configuración de DNS es automática — no hay
+> que tocar registrador ni DNS externo. Solo falta crear el proyecto de Pages y conectar
+> este repo.
+>
+> Si al conectar el repo Cloudflare no lo ve: en el paso "Connect to Git" hay que
+> **autorizar la GitHub App de Cloudflare** sobre la cuenta `realtyurbania-sudo` (o
+> transferir primero este repo a la org **Sanate2025**, donde ya está el resto).
 
 **Opción B — GitHub Actions** (si prefieres, como en urbania-site-redesign):
 crea `.github/workflows/deploy.yml` (requiere un token con scope `workflow`) con:
