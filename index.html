@@ -41,6 +41,10 @@ header.nav .links a:hover{opacity:1}
 header.nav.solid{background:rgba(246,244,239,.92);backdrop-filter:blur(10px);color:var(--ink);box-shadow:0 1px 0 var(--line)}
 header.nav.solid .nav-cta{border-color:var(--bronze);color:var(--bronze-d)}
 .burger{display:none;background:none;border:0;color:inherit;font-size:1.5rem;cursor:pointer}
+.nav-actions{display:flex;align-items:center;gap:22px}
+.lang-toggle{background:none;border:1px solid currentColor;color:inherit;font-family:var(--sans);font-size:.72rem;letter-spacing:.12em;font-weight:600;padding:.42rem .72rem;border-radius:2px;cursor:pointer;transition:opacity .25s;line-height:1}
+.lang-toggle:hover{opacity:.68}
+header.nav.solid .lang-toggle{border-color:var(--bronze);color:var(--bronze-d)}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
@@ -249,16 +253,19 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
       <img class="lg-w" src="assets/logos/stay-white.png" alt="Stay">
       <img class="lg-i" src="assets/logos/stay-ink.png" alt="Stay">
     </a>
-    <nav class="links">
-      <a href="#proyecto">El proyecto</a>
-      <a href="#ubicacion">Ubicación</a>
-      <a href="#espacios">Espacios</a>
-      <a href="#amenidades">Amenidades</a>
-      <a href="#inversion">Inversión</a>
-      <a class="link-conn" href="#connection">Connection</a>
-      <a class="nav-cta" href="#contacto">Contacto</a>
-    </nav>
-    <button class="burger" aria-label="Menú">☰</button>
+    <div class="nav-actions">
+      <nav class="links">
+        <a href="#proyecto" data-en="The project">El proyecto</a>
+        <a href="#ubicacion" data-en="Location">Ubicación</a>
+        <a href="#espacios" data-en="Spaces">Espacios</a>
+        <a href="#amenidades" data-en="Amenities">Amenidades</a>
+        <a href="#inversion" data-en="Investment">Inversión</a>
+        <a class="link-conn" href="#connection">Connection</a>
+        <a class="nav-cta" href="#contacto" data-en="Contact">Contacto</a>
+      </nav>
+      <button class="lang-toggle" type="button" data-lang-toggle aria-label="View in English">EN</button>
+      <button class="burger" aria-label="Menú">☰</button>
+    </div>
   </div>
 </header>
 
@@ -268,11 +275,11 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
   <div class="hero__inner">
     <div class="wrap">
       <p class="eyebrow on-dark" style="margin-bottom:22px">Urbania Developer &amp; Emporium Developers</p>
-      <h1>Vivir y alquilar, <em>redefinido.</em></h1>
-      <p class="lede">Un edificio de lujo que redefine la experiencia de vivir y alquilar en espacios de alto nivel, en el corazón de la Ciudad de Panamá.</p>
+      <h1 data-en="Living and renting, <em>redefined.</em>">Vivir y alquilar, <em>redefinido.</em></h1>
+      <p class="lede" data-en="A luxury building that redefines the experience of living and renting high-end spaces in the heart of Panama City.">Un edificio de lujo que redefine la experiencia de vivir y alquilar en espacios de alto nivel, en el corazón de la Ciudad de Panamá.</p>
       <div class="cta-row">
-        <a class="btn btn-solid" href="#inversion">Invertir en Stay</a>
-        <a class="btn btn-ghost" href="#espacios">Conocer el proyecto</a>
+        <a class="btn btn-solid" href="#inversion" data-en="Invest in Stay">Invertir en Stay</a>
+        <a class="btn btn-ghost" href="#espacios" data-en="Explore the project">Conocer el proyecto</a>
       </div>
     </div>
   </div>
@@ -285,9 +292,9 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
     <div class="two">
       <div>
         <div class="rule"></div>
-        <p class="eyebrow" style="margin-bottom:20px">El concepto</p>
-        <h2 class="kick-h">Más que un alojamiento, un refugio sofisticado.</h2>
-        <p class="lead" style="margin-top:24px">Stay brinda el confort de un hogar, diseñado para satisfacer las necesidades de los inquilinos más exigentes en estancias cortas o largas. Interiores elegantes y funcionales, de diseño minimalista y materiales de alta calidad, que integran tecnología de punta y elementos sostenibles.</p>
+        <p class="eyebrow" style="margin-bottom:20px" data-en="The concept">El concepto</p>
+        <h2 class="kick-h" data-en="More than a place to stay, a sophisticated retreat.">Más que un alojamiento, un refugio sofisticado.</h2>
+        <p class="lead" style="margin-top:24px" data-en="Stay offers the comfort of home, designed to meet the needs of the most discerning tenants on short or long stays. Elegant, functional interiors with minimalist design and high-quality materials, integrating cutting-edge technology and sustainable elements.">Stay brinda el confort de un hogar, diseñado para satisfacer las necesidades de los inquilinos más exigentes en estancias cortas o largas. Interiores elegantes y funcionales, de diseño minimalista y materiales de alta calidad, que integran tecnología de punta y elementos sostenibles.</p>
       </div>
       <figure class="media" style="aspect-ratio:4/5">
         <img src="assets/web/int-bed-view.webp" alt="Interior de un apartamento Stay con vista a la ciudad">
@@ -295,9 +302,9 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
     </div>
 
     <div class="pillars">
-      <div class="p"><div class="ic"></div><h3>Estilo minimalista</h3><p>Diseño interior sereno y sofisticado que equilibra comodidad y estilo con mobiliario funcional.</p></div>
-      <div class="p"><div class="ic"></div><h3>Cocina equipada</h3><p>Cocinas totalmente equipadas que integran estilo y funcionalidad con electrodomésticos modernos.</p></div>
-      <div class="p"><div class="ic"></div><h3>Mobiliario integrado</h3><p>Armarios, cama y closets optimizan el espacio con materiales de alta calidad, atemporales.</p></div>
+      <div class="p"><div class="ic"></div><h3 data-en="Minimalist style">Estilo minimalista</h3><p data-en="Serene, sophisticated interior design that balances comfort and style with functional furniture.">Diseño interior sereno y sofisticado que equilibra comodidad y estilo con mobiliario funcional.</p></div>
+      <div class="p"><div class="ic"></div><h3 data-en="Equipped kitchen">Cocina equipada</h3><p data-en="Fully equipped kitchens that combine style and functionality with modern appliances.">Cocinas totalmente equipadas que integran estilo y funcionalidad con electrodomésticos modernos.</p></div>
+      <div class="p"><div class="ic"></div><h3 data-en="Built-in furniture">Mobiliario integrado</h3><p data-en="Wardrobes, bed and closets optimize the space with high-quality, timeless materials.">Armarios, cama y closets optimizan el espacio con materiales de alta calidad, atemporales.</p></div>
     </div>
   </div>
 </section>
@@ -306,17 +313,17 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
 <section class="sec dark" id="ubicacion">
   <div class="wrap">
     <div class="rule"></div>
-    <p class="eyebrow on-dark" style="margin-bottom:18px">Ubicación estratégica</p>
+    <p class="eyebrow on-dark" style="margin-bottom:18px" data-en="Strategic location">Ubicación estratégica</p>
     <div class="loc-grid">
       <div>
-        <h2 class="kick-h">En el corazón de la ciudad, sobre la Avenida Federico Boyd.</h2>
+        <h2 class="kick-h" data-en="In the heart of the city, on Avenida Federico Boyd.">En el corazón de la ciudad, sobre la Avenida Federico Boyd.</h2>
         <div class="metro" style="margin-top:30px">
-          <b>20</b><div><div style="color:#fff;font-size:1.02rem">pasos a la Estación Iglesia del Carmen</div><div style="color:var(--muted-lt);font-size:.86rem">Línea 1 del Metro · trasbordo a Línea 2 · conexión al Aeropuerto Internacional</div></div>
+          <b>20</b><div><div style="color:#fff;font-size:1.02rem" data-en="steps to the Iglesia del Carmen station">pasos a la Estación Iglesia del Carmen</div><div style="color:var(--muted-lt);font-size:.86rem" data-en="Metro Line 1 · transfer to Line 2 · connection to the International Airport">Línea 1 del Metro · trasbordo a Línea 2 · conexión al Aeropuerto Internacional</div></div>
         </div>
-        <p class="lead" style="margin-top:20px">Movilidad excepcional hacia las principales áreas recreativas, comerciales y de negocios de Panamá, a solo pasos del complejo.</p>
+        <p class="lead" style="margin-top:20px" data-en="Exceptional mobility to Panama's main recreational, commercial and business areas, just steps from the building.">Movilidad excepcional hacia las principales áreas recreativas, comerciales y de negocios de Panamá, a solo pasos del complejo.</p>
       </div>
       <div>
-        <p class="eyebrow on-dark">12 lugares destacados</p>
+        <p class="eyebrow on-dark" data-en="12 notable places">12 lugares destacados</p>
         <ul class="poi">
           <li><span>Iglesia del Carmen</span><span>2 min</span></li>
           <li><span>Universidad de Panamá</span><span>6 min</span></li>
@@ -340,15 +347,15 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
 <section class="sec" id="espacios">
   <div class="wrap">
     <div class="rule"></div>
-    <p class="eyebrow" style="margin-bottom:18px">Los espacios</p>
-    <h2 class="kick-h">Interiores pensados al detalle.</h2>
-    <p class="lead" style="margin-top:22px;max-width:64ch">Cada apartamento maximiza la comodidad en un espacio integral y flexible: descanso, cocina y trabajo conviven en una estética elegante y atemporal.</p>
+    <p class="eyebrow" style="margin-bottom:18px" data-en="The spaces">Los espacios</p>
+    <h2 class="kick-h" data-en="Interiors designed down to the detail.">Interiores pensados al detalle.</h2>
+    <p class="lead" style="margin-top:22px;max-width:64ch" data-en="Each apartment maximizes comfort in an integrated, flexible space: rest, kitchen and work coexist in an elegant, timeless aesthetic.">Cada apartamento maximiza la comodidad en un espacio integral y flexible: descanso, cocina y trabajo conviven en una estética elegante y atemporal.</p>
     <div class="gal">
-      <div class="cell c-7 tall"><img src="assets/web/int-bed-view.webp" alt="Recámara de un apartamento Stay con vista a la ciudad"><span class="cap">Recámara con vista</span></div>
-      <div class="cell c-5"><img src="assets/web/int-bedroom.webp" alt="Recámara del apartamento modelo"><span class="cap">Descanso</span></div>
-      <div class="cell c-5"><img src="assets/web/int-sala.webp" alt="Sala-comedor con cocina equipada"><span class="cap">Sala-comedor</span></div>
-      <div class="cell c-6"><img src="assets/web/int-recamara2.webp" alt="Recámara con cocina integrada"><span class="cap">Recámara &amp; cocina</span></div>
-      <div class="cell c-6"><img src="assets/web/int-living.webp" alt="Espacio integral con mobiliario funcional"><span class="cap">Espacio integral</span></div>
+      <div class="cell c-7 tall"><img src="assets/web/int-bed-view.webp" alt="Recámara de un apartamento Stay con vista a la ciudad"><span class="cap" data-en="Bedroom with a view">Recámara con vista</span></div>
+      <div class="cell c-5"><img src="assets/web/int-bedroom.webp" alt="Recámara del apartamento modelo"><span class="cap" data-en="Rest">Descanso</span></div>
+      <div class="cell c-5"><img src="assets/web/int-sala.webp" alt="Sala-comedor con cocina equipada"><span class="cap" data-en="Living-dining">Sala-comedor</span></div>
+      <div class="cell c-6"><img src="assets/web/int-recamara2.webp" alt="Recámara con cocina integrada"><span class="cap" data-en="Bedroom &amp; kitchen">Recámara &amp; cocina</span></div>
+      <div class="cell c-6"><img src="assets/web/int-living.webp" alt="Espacio integral con mobiliario funcional"><span class="cap" data-en="Integrated space">Espacio integral</span></div>
     </div>
   </div>
 </section>
@@ -357,10 +364,10 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
 <section class="sec dark" id="amenidades">
   <div class="wrap">
     <div class="rule"></div>
-    <p class="eyebrow on-dark" style="margin-bottom:18px">Amenidades</p>
+    <p class="eyebrow on-dark" style="margin-bottom:18px" data-en="Amenities">Amenidades</p>
     <div class="inv-head">
-      <h2 class="kick-h">Un edificio pensado para vivir mejor.</h2>
-      <p class="lead">Desde un rooftop con piscina y bar hasta coworking, gimnasio y spa — cada espacio está diseñado para desconectar, trabajar y celebrar, con las mejores vistas de la ciudad.</p>
+      <h2 class="kick-h" data-en="A building designed for better living.">Un edificio pensado para vivir mejor.</h2>
+      <p class="lead" data-en="From a rooftop with a pool and bar to coworking, gym and spa — every space is designed to unwind, work and celebrate, with the best views of the city.">Desde un rooftop con piscina y bar hasta coworking, gimnasio y spa — cada espacio está diseñado para desconectar, trabajar y celebrar, con las mejores vistas de la ciudad.</p>
     </div>
     <div class="amen" data-amen>
       <figure class="amen-stage">
@@ -371,15 +378,15 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
         </figcaption>
       </figure>
       <div class="amen-tabs" role="tablist">
-        <button class="amen-tab is-on" data-img="assets/web/roof-pool.webp" data-name="Piscina" data-desc="Piscina en el rooftop con vista al skyline de Panamá, para refrescarte y relajarte en las alturas."><img src="assets/web/roof-pool.webp" alt="" loading="lazy"><span>Piscina</span></button>
-        <button class="amen-tab" data-img="assets/web/roof-bar.webp" data-name="Rooftop bar" data-desc="Un bar en la azotea con ambiente sofisticado, ideal para reuniones y atardeceres inolvidables."><img src="assets/web/roof-bar.webp" alt="" loading="lazy"><span>Rooftop bar</span></button>
-        <button class="amen-tab" data-img="assets/web/roof-terrace.webp" data-name="Terraza" data-desc="Terrazas al aire libre con vistas panorámicas de la ciudad, la bahía y la catedral."><img src="assets/web/roof-terrace.webp" alt="" loading="lazy"><span>Terraza</span></button>
-        <button class="amen-tab" data-img="assets/web/coworking.webp" data-name="Coworking" data-desc="Espacios de trabajo compartidos, cómodos y luminosos, para trabajar sin salir de casa."><img src="assets/web/coworking.webp" alt="" loading="lazy"><span>Coworking</span></button>
-        <button class="amen-tab" data-img="assets/web/gym.webp" data-name="Gimnasio" data-desc="Gimnasio totalmente equipado con vistas a la ciudad, para mantener tu rutina activa."><img src="assets/web/gym.webp" alt="" loading="lazy"><span>Gimnasio</span></button>
-        <button class="amen-tab" data-img="assets/web/spa.webp" data-name="Spa &amp; sauna" data-desc="Un espacio de bienestar con sauna, ideal para desconectar y revitalizar cuerpo y mente."><img src="assets/web/spa.webp" alt="" loading="lazy"><span>Spa &amp; sauna</span></button>
-        <button class="amen-tab" data-img="assets/web/lounge.webp" data-name="Lounge" data-desc="Áreas sociales y lounge para compartir, reunirte y relajarte con la comunidad."><img src="assets/web/lounge.webp" alt="" loading="lazy"><span>Lounge</span></button>
-        <button class="amen-tab" data-img="assets/web/roof-chess.webp" data-name="Zona social" data-desc="Áreas recreativas en el rooftop, con ajedrez gigante y espacios para socializar al aire libre."><img src="assets/web/roof-chess.webp" alt="" loading="lazy"><span>Zona social</span></button>
-        <button class="amen-tab" data-img="assets/web/lobby-entrance.webp" data-name="Lobby &amp; acceso" data-desc="Un acceso y lobby de diseño elegante que dan la bienvenida al edificio."><img src="assets/web/lobby-entrance.webp" alt="" loading="lazy"><span>Lobby</span></button>
+        <button class="amen-tab is-on" data-img="assets/web/roof-pool.webp" data-name="Piscina" data-name-en="Pool" data-desc="Piscina en el rooftop con vista al skyline de Panamá, para refrescarte y relajarte en las alturas." data-desc-en="Rooftop pool overlooking the Panama skyline, to cool off and relax up high."><img src="assets/web/roof-pool.webp" alt="" loading="lazy"><span data-en="Pool">Piscina</span></button>
+        <button class="amen-tab" data-img="assets/web/roof-bar.webp" data-name="Rooftop bar" data-name-en="Rooftop bar" data-desc="Un bar en la azotea con ambiente sofisticado, ideal para reuniones y atardeceres inolvidables." data-desc-en="A rooftop bar with a sophisticated atmosphere, perfect for gatherings and unforgettable sunsets."><img src="assets/web/roof-bar.webp" alt="" loading="lazy"><span data-en="Rooftop bar">Rooftop bar</span></button>
+        <button class="amen-tab" data-img="assets/web/roof-terrace.webp" data-name="Terraza" data-name-en="Terrace" data-desc="Terrazas al aire libre con vistas panorámicas de la ciudad, la bahía y la catedral." data-desc-en="Open-air terraces with panoramic views of the city, the bay and the cathedral."><img src="assets/web/roof-terrace.webp" alt="" loading="lazy"><span data-en="Terrace">Terraza</span></button>
+        <button class="amen-tab" data-img="assets/web/coworking.webp" data-name="Coworking" data-name-en="Coworking" data-desc="Espacios de trabajo compartidos, cómodos y luminosos, para trabajar sin salir de casa." data-desc-en="Comfortable, bright shared workspaces to work without leaving home."><img src="assets/web/coworking.webp" alt="" loading="lazy"><span data-en="Coworking">Coworking</span></button>
+        <button class="amen-tab" data-img="assets/web/gym.webp" data-name="Gimnasio" data-name-en="Gym" data-desc="Gimnasio totalmente equipado con vistas a la ciudad, para mantener tu rutina activa." data-desc-en="Fully equipped gym with city views to keep your routine active."><img src="assets/web/gym.webp" alt="" loading="lazy"><span data-en="Gym">Gimnasio</span></button>
+        <button class="amen-tab" data-img="assets/web/spa.webp" data-name="Spa &amp; sauna" data-name-en="Spa &amp; sauna" data-desc="Un espacio de bienestar con sauna, ideal para desconectar y revitalizar cuerpo y mente." data-desc-en="A wellness space with sauna, ideal to unwind and revitalize body and mind."><img src="assets/web/spa.webp" alt="" loading="lazy"><span data-en="Spa &amp; sauna">Spa &amp; sauna</span></button>
+        <button class="amen-tab" data-img="assets/web/lounge.webp" data-name="Lounge" data-name-en="Lounge" data-desc="Áreas sociales y lounge para compartir, reunirte y relajarte con la comunidad." data-desc-en="Social and lounge areas to share, gather and relax with the community."><img src="assets/web/lounge.webp" alt="" loading="lazy"><span data-en="Lounge">Lounge</span></button>
+        <button class="amen-tab" data-img="assets/web/roof-chess.webp" data-name="Zona social" data-name-en="Social area" data-desc="Áreas recreativas en el rooftop, con ajedrez gigante y espacios para socializar al aire libre." data-desc-en="Rooftop recreational areas with giant chess and spaces to socialize outdoors."><img src="assets/web/roof-chess.webp" alt="" loading="lazy"><span data-en="Social area">Zona social</span></button>
+        <button class="amen-tab" data-img="assets/web/lobby-entrance.webp" data-name="Lobby &amp; acceso" data-name-en="Lobby &amp; entrance" data-desc="Un acceso y lobby de diseño elegante que dan la bienvenida al edificio." data-desc-en="An elegantly designed entrance and lobby that welcome you to the building."><img src="assets/web/lobby-entrance.webp" alt="" loading="lazy"><span data-en="Lobby">Lobby</span></button>
       </div>
     </div>
   </div>
@@ -389,48 +396,48 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
 <section class="sec stone" id="inversion">
   <div class="wrap">
     <div class="rule"></div>
-    <p class="eyebrow" style="margin-bottom:18px">Análisis de rentabilidad</p>
+    <p class="eyebrow" style="margin-bottom:18px" data-en="Profitability analysis">Análisis de rentabilidad</p>
     <div class="inv-head">
-      <h2 class="kick-h">Una inversión rentable, de alta demanda.</h2>
+      <h2 class="kick-h" data-en="A profitable, high-demand investment.">Una inversión rentable, de alta demanda.</h2>
       <div>
         <div class="facts">
-          <div class="f"><b>33.24 m²</b><span>Desde · aprox.</span></div>
-          <div class="f"><b>1 · 1</b><span>Recámara · Baño</span></div>
-          <div class="f"><b>$120,000</b><span>Desde · amoblado</span></div>
+          <div class="f"><b>33.24 m²</b><span data-en="From · approx.">Desde · aprox.</span></div>
+          <div class="f"><b>1 · 1</b><span data-en="Bedroom · Bath">Recámara · Baño</span></div>
+          <div class="f"><b>$120,000</b><span data-en="From · furnished">Desde · amoblado</span></div>
         </div>
       </div>
     </div>
 
     <div class="roi">
       <div class="card">
-        <span class="tag">Conservador</span>
+        <span class="tag" data-en="Conservative">Conservador</span>
         <div class="big">8.18<span style="font-size:1.4rem">%</span></div>
-        <div class="sub">Retorno anual (ROI) · 65% ocupación</div>
-        <ul><li>Renta mensual <b>$818</b></li><li>Renta anual <b>$9,818</b></li><li>Tarifa promedio <b>$72</b></li></ul>
+        <div class="sub" data-en="Annual return (ROI) · 65% occupancy">Retorno anual (ROI) · 65% ocupación</div>
+        <ul data-en="<li>Monthly rent <b>$818</b></li><li>Annual rent <b>$9,818</b></li><li>Average rate <b>$72</b></li>"><li>Renta mensual <b>$818</b></li><li>Renta anual <b>$9,818</b></li><li>Tarifa promedio <b>$72</b></li></ul>
       </div>
       <div class="card feat">
-        <span class="tag">Base</span>
+        <span class="tag" data-en="Base">Base</span>
         <div class="big">9.71<span style="font-size:1.4rem">%</span></div>
-        <div class="sub">Retorno anual (ROI) · 75% ocupación</div>
-        <ul><li>Renta mensual <b>$971</b></li><li>Renta anual <b>$11,652</b></li><li>Tarifa promedio <b>$72</b></li></ul>
+        <div class="sub" data-en="Annual return (ROI) · 75% occupancy">Retorno anual (ROI) · 75% ocupación</div>
+        <ul data-en="<li>Monthly rent <b>$971</b></li><li>Annual rent <b>$11,652</b></li><li>Average rate <b>$72</b></li>"><li>Renta mensual <b>$971</b></li><li>Renta anual <b>$11,652</b></li><li>Tarifa promedio <b>$72</b></li></ul>
       </div>
       <div class="card">
-        <span class="tag">Optimista</span>
+        <span class="tag" data-en="Optimistic">Optimista</span>
         <div class="big">11.24<span style="font-size:1.4rem">%</span></div>
-        <div class="sub">Retorno anual (ROI) · 85% ocupación</div>
-        <ul><li>Renta mensual <b>$1,124</b></li><li>Renta anual <b>$13,486</b></li><li>Tarifa promedio <b>$72</b></li></ul>
+        <div class="sub" data-en="Annual return (ROI) · 85% occupancy">Retorno anual (ROI) · 85% ocupación</div>
+        <ul data-en="<li>Monthly rent <b>$1,124</b></li><li>Annual rent <b>$13,486</b></li><li>Average rate <b>$72</b></li>"><li>Renta mensual <b>$1,124</b></li><li>Renta anual <b>$13,486</b></li><li>Tarifa promedio <b>$72</b></li></ul>
       </div>
     </div>
 
     <div style="margin-top:52px;max-width:70ch">
-      <p class="eyebrow" style="margin-bottom:16px">Beneficios para propietarios</p>
+      <p class="eyebrow" style="margin-bottom:16px" data-en="Owner benefits">Beneficios para propietarios</p>
       <ul class="benefits">
-        <li>Ingresos pasivos sostenibles</li>
-        <li>Administración integral y sencilla</li>
-        <li>Revalorización de la propiedad</li>
-        <li>Alta demanda y diversidad de servicios</li>
+        <li data-en="Sustainable passive income">Ingresos pasivos sostenibles</li>
+        <li data-en="Simple, all-in management">Administración integral y sencilla</li>
+        <li data-en="Property appreciation">Revalorización de la propiedad</li>
+        <li data-en="High demand and diverse services">Alta demanda y diversidad de servicios</li>
       </ul>
-      <p style="font-size:.74rem;color:var(--muted);margin-top:26px">*Escenarios proyectados con fines ilustrativos. Management fee Stay 20%. La rentabilidad final depende de la ocupación, tarifas y costos operativos. Sujeto a los documentos de oferta.</p>
+      <p style="font-size:.74rem;color:var(--muted);margin-top:26px" data-en="*Projected scenarios for illustrative purposes. Stay management fee 20%. Final returns depend on occupancy, rates and operating costs. Subject to the offering documents.">*Escenarios proyectados con fines ilustrativos. Management fee Stay 20%. La rentabilidad final depende de la ocupación, tarifas y costos operativos. Sujeto a los documentos de oferta.</p>
     </div>
   </div>
 </section>
@@ -439,15 +446,15 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
 <section class="sec" id="panama">
   <div class="wrap">
     <div class="rule"></div>
-    <p class="eyebrow" style="margin-bottom:18px">Invertir en Panamá</p>
+    <p class="eyebrow" style="margin-bottom:18px" data-en="Investing in Panama">Invertir en Panamá</p>
     <div class="inv-head">
-      <h2 class="kick-h">Un destino ideal para la inversión inmobiliaria.</h2>
-      <p class="lead">Economía estable y 100% dolarizada, posición estratégica como centro logístico y un destino turístico y de negocios en constante crecimiento.</p>
+      <h2 class="kick-h" data-en="An ideal destination for real estate investment.">Un destino ideal para la inversión inmobiliaria.</h2>
+      <p class="lead" data-en="A stable, 100% dollarized economy, a strategic position as a logistics hub, and a tourism and business destination in constant growth.">Economía estable y 100% dolarizada, posición estratégica como centro logístico y un destino turístico y de negocios en constante crecimiento.</p>
     </div>
     <div class="pty">
-      <div class="p"><img src="assets/web/pty-skyline.webp" alt="Skyline de Ciudad de Panamá"><div class="t"><h3>Hub de las Américas</h3><p>Puerta de entrada entre Norte, Centro y Suramérica, con demanda constante de propiedades de lujo para alquiler.</p></div></div>
-      <div class="p"><img src="assets/web/pty-casco.webp" alt="Casco Antiguo de Panamá"><div class="t"><h3>Turismo &amp; estilo de vida</h3><p>Playas, barrios históricos, gastronomía y cultura conviven con una moderna infraestructura urbana.</p></div></div>
-      <div class="p"><img src="assets/web/pty-bridge.webp" alt="Puente de las Américas"><div class="t"><h3>Incentivos al inversor</h3><p>Ventajas fiscales y trámites migratorios ágiles hacen de Panamá un lugar accesible y rentable.</p></div></div>
+      <div class="p"><img src="assets/web/pty-skyline.webp" alt="Skyline de Ciudad de Panamá"><div class="t"><h3 data-en="Hub of the Americas">Hub de las Américas</h3><p data-en="Gateway between North, Central and South America, with constant demand for luxury rental properties.">Puerta de entrada entre Norte, Centro y Suramérica, con demanda constante de propiedades de lujo para alquiler.</p></div></div>
+      <div class="p"><img src="assets/web/pty-casco.webp" alt="Casco Antiguo de Panamá"><div class="t"><h3 data-en="Tourism &amp; lifestyle">Turismo &amp; estilo de vida</h3><p data-en="Beaches, historic neighborhoods, cuisine and culture coexist with modern urban infrastructure.">Playas, barrios históricos, gastronomía y cultura conviven con una moderna infraestructura urbana.</p></div></div>
+      <div class="p"><img src="assets/web/pty-bridge.webp" alt="Puente de las Américas"><div class="t"><h3 data-en="Investor incentives">Incentivos al inversor</h3><p data-en="Tax advantages and streamlined immigration processes make Panama accessible and profitable.">Ventajas fiscales y trámites migratorios ágiles hacen de Panamá un lugar accesible y rentable.</p></div></div>
     </div>
   </div>
 </section>
@@ -459,8 +466,8 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
       <div>
         <div class="rule"></div>
         <p class="eyebrow on-dark" style="margin-bottom:18px">Stay Con·nection</p>
-        <h2 class="kick-h">Conoce lo mejor de Panamá y vive experiencias únicas.</h2>
-        <p class="lead" style="margin-top:22px">Más que un servicio, una forma de vivir la ciudad. Stay Connection conecta a nuestros residentes e inquilinos con lo mejor de Panamá — cultura, bienestar, sabores y celebraciones — transformando cada día en una experiencia única, más allá de tu apartamento.</p>
+        <h2 class="kick-h" data-en="Discover the best of Panama and live unique experiences.">Conoce lo mejor de Panamá y vive experiencias únicas.</h2>
+        <p class="lead" style="margin-top:22px" data-en="More than a service, a way to live the city. Stay Connection links our residents and tenants with the best of Panama — culture, wellness, flavors and celebrations — turning every day into a unique experience, beyond your apartment.">Más que un servicio, una forma de vivir la ciudad. Stay Connection conecta a nuestros residentes e inquilinos con lo mejor de Panamá — cultura, bienestar, sabores y celebraciones — transformando cada día en una experiencia única, más allá de tu apartamento.</p>
       </div>
       <div class="conn-icon" aria-hidden="true">
         <svg viewBox="0 0 100 100" fill="none" stroke="var(--bronze)" stroke-width="2.4">
@@ -472,20 +479,20 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
 
     <div class="conn-x" data-conn>
       <div class="conn-tabs" role="tablist">
-        <button class="conn-tab is-on" data-i="0" role="tab">01 · Explora Panamá</button>
-        <button class="conn-tab" data-i="1" role="tab">02 · Bienestar &amp; naturaleza</button>
-        <button class="conn-tab" data-i="2" role="tab">03 · Delicias gastronómicas</button>
-        <button class="conn-tab" data-i="3" role="tab">04 · Eventos &amp; festividades</button>
+        <button class="conn-tab is-on" data-i="0" role="tab" data-en="01 · Explore Panama">01 · Explora Panamá</button>
+        <button class="conn-tab" data-i="1" role="tab" data-en="02 · Wellness &amp; nature">02 · Bienestar &amp; naturaleza</button>
+        <button class="conn-tab" data-i="2" role="tab" data-en="03 · Culinary delights">03 · Delicias gastronómicas</button>
+        <button class="conn-tab" data-i="3" role="tab" data-en="04 · Events &amp; festivities">04 · Eventos &amp; festividades</button>
       </div>
 
       <div class="conn-panel is-on" data-panel="0">
         <figure class="conn-media"><img src="assets/web/conn-explora.webp" alt="Casco Antiguo colonial de Panamá" loading="lazy"></figure>
         <div class="conn-body">
-          <h3>Explora Panamá</h3>
+          <h3 data-en="Explore Panama">Explora Panamá</h3>
           <ul>
-            <li><b>Visitas a sitios históricos</b>Descubre la maravilla del Canal de Panamá y la rica historia de sus museos.</li>
-            <li><b>Arquitectura urbana</b>El Casco Antiguo colonial, Bella Vista y su art déco, y la Iglesia del Carmen neogótica.</li>
-            <li><b>Rutas escénicas</b>Caminatas guiadas y recorridos por las locaciones y paisajes más emblemáticos.</li>
+            <li data-en="<b>Historic site visits</b>Discover the wonder of the Panama Canal and the rich history of its museums."><b>Visitas a sitios históricos</b>Descubre la maravilla del Canal de Panamá y la rica historia de sus museos.</li>
+            <li data-en="<b>Urban architecture</b>The colonial Casco Antiguo, Bella Vista and its art deco, and the neo-Gothic Iglesia del Carmen."><b>Arquitectura urbana</b>El Casco Antiguo colonial, Bella Vista y su art déco, y la Iglesia del Carmen neogótica.</li>
+            <li data-en="<b>Scenic routes</b>Guided walks and tours through the most iconic locations and landscapes."><b>Rutas escénicas</b>Caminatas guiadas y recorridos por las locaciones y paisajes más emblemáticos.</li>
           </ul>
         </div>
       </div>
@@ -493,12 +500,12 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
       <div class="conn-panel" data-panel="1">
         <figure class="conn-media"><img src="assets/web/conn-bienestar.webp" alt="Naturaleza y parques de Panamá" loading="lazy"></figure>
         <div class="conn-body">
-          <h3>Bienestar &amp; naturaleza</h3>
+          <h3 data-en="Wellness &amp; nature">Bienestar &amp; naturaleza</h3>
           <ul>
-            <li><b>Yoga y meditación</b>Sesiones al amanecer en el rooftop o en parques cercanos para revitalizar la mente.</li>
-            <li><b>Ciclismo urbano</b>Recorridos por la Cinta Costera, el Casco Antiguo y otras áreas icónicas.</li>
-            <li><b>Caminatas y senderismo</b>Paseos guiados por el Parque Urracá y rutas hacia áreas naturales cercanas.</li>
-            <li><b>Ejercicio al aire libre</b>Clases grupales de fitness en espacios abiertos, para un estilo de vida activo.</li>
+            <li data-en="<b>Yoga and meditation</b>Sunrise sessions on the rooftop or in nearby parks to revitalize the mind."><b>Yoga y meditación</b>Sesiones al amanecer en el rooftop o en parques cercanos para revitalizar la mente.</li>
+            <li data-en="<b>Urban cycling</b>Rides along the Cinta Costera, the Casco Antiguo and other iconic areas."><b>Ciclismo urbano</b>Recorridos por la Cinta Costera, el Casco Antiguo y otras áreas icónicas.</li>
+            <li data-en="<b>Walks and hiking</b>Guided walks through Parque Urracá and routes to nearby natural areas."><b>Caminatas y senderismo</b>Paseos guiados por el Parque Urracá y rutas hacia áreas naturales cercanas.</li>
+            <li data-en="<b>Outdoor exercise</b>Group fitness classes in open spaces, for an active lifestyle."><b>Ejercicio al aire libre</b>Clases grupales de fitness en espacios abiertos, para un estilo de vida activo.</li>
           </ul>
         </div>
       </div>
@@ -506,11 +513,11 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
       <div class="conn-panel" data-panel="2">
         <figure class="conn-media"><img src="assets/web/conn-delicias.webp" alt="Experiencia gastronómica" loading="lazy"></figure>
         <div class="conn-body">
-          <h3>Delicias gastronómicas</h3>
+          <h3 data-en="Culinary delights">Delicias gastronómicas</h3>
           <ul>
-            <li><b>Catas de vino y café</b>Disfruta los sabores más exclusivos de Panamá con nuestras catas guiadas.</li>
-            <li><b>Talleres gastronómicos</b>Aprende a preparar platos icónicos de la cocina local e internacional.</li>
-            <li><b>Degustaciones especiales</b>Eventos diseñados para deleitar tus sentidos y celebrar la riqueza culinaria.</li>
+            <li data-en="<b>Wine and coffee tastings</b>Enjoy Panama's most exclusive flavors with our guided tastings."><b>Catas de vino y café</b>Disfruta los sabores más exclusivos de Panamá con nuestras catas guiadas.</li>
+            <li data-en="<b>Cooking workshops</b>Learn to prepare iconic dishes from local and international cuisine."><b>Talleres gastronómicos</b>Aprende a preparar platos icónicos de la cocina local e internacional.</li>
+            <li data-en="<b>Special tastings</b>Events designed to delight your senses and celebrate culinary richness."><b>Degustaciones especiales</b>Eventos diseñados para deleitar tus sentidos y celebrar la riqueza culinaria.</li>
           </ul>
         </div>
       </div>
@@ -518,11 +525,11 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
       <div class="conn-panel" data-panel="3">
         <figure class="conn-media"><img src="assets/web/conn-eventos.webp" alt="Festividades y folclore panameño" loading="lazy"></figure>
         <div class="conn-body">
-          <h3>Eventos &amp; festividades</h3>
+          <h3 data-en="Events &amp; festivities">Eventos &amp; festividades</h3>
           <ul>
-            <li><b>Celebraciones temáticas</b>Halloween, fiestas patrias y Navidad con actividades para conectar con la comunidad.</li>
-            <li><b>Fiestas y reuniones</b>Eventos únicos en el rooftop con bar y piscina, ideales para crear recuerdos.</li>
-            <li><b>Experiencias culturales</b>Música, tradiciones panameñas y talleres artesanales.</li>
+            <li data-en="<b>Themed celebrations</b>Halloween, national holidays and Christmas with activities to connect with the community."><b>Celebraciones temáticas</b>Halloween, fiestas patrias y Navidad con actividades para conectar con la comunidad.</li>
+            <li data-en="<b>Parties and gatherings</b>Unique rooftop events with bar and pool, perfect for making memories."><b>Fiestas y reuniones</b>Eventos únicos en el rooftop con bar y piscina, ideales para crear recuerdos.</li>
+            <li data-en="<b>Cultural experiences</b>Music, Panamanian traditions and artisan workshops."><b>Experiencias culturales</b>Música, tradiciones panameñas y talleres artesanales.</li>
           </ul>
         </div>
       </div>
@@ -534,9 +541,9 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
 <section class="sec">
   <div class="wrap" style="text-align:center">
     <div class="rule c"></div>
-    <p class="eyebrow" style="margin-bottom:18px">Sinergia</p>
-    <h2 class="kick-h" style="margin:0 auto;max-width:24ch">Stay nace de la colaboración entre dos líderes del sector inmobiliario.</h2>
-    <p class="lead" style="margin:22px auto 0">La innovación y visión de Urbania Developer con la experiencia y precisión de Emporium Developers, en un concepto de lujo que redefine la inversión inmobiliaria de renta en Panamá.</p>
+    <p class="eyebrow" style="margin-bottom:18px" data-en="Synergy">Sinergia</p>
+    <h2 class="kick-h" style="margin:0 auto;max-width:24ch" data-en="Stay is born from the collaboration between two real estate leaders.">Stay nace de la colaboración entre dos líderes del sector inmobiliario.</h2>
+    <p class="lead" style="margin:22px auto 0" data-en="The innovation and vision of Urbania Developer with the experience and precision of Emporium Developers, in a luxury concept that redefines rental real estate investment in Panama.">La innovación y visión de Urbania Developer con la experiencia y precisión de Emporium Developers, en un concepto de lujo que redefine la inversión inmobiliaria de renta en Panamá.</p>
     <div class="devs">
       <img src="assets/logos/urbania-ink.png" alt="Urbania Developer" style="height:78px">
       <div class="x">&amp;</div>
@@ -549,12 +556,12 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
 <section class="sec dark" id="contacto">
   <div class="wrap cta-final">
     <div class="rule c"></div>
-    <p class="eyebrow on-dark" style="margin-bottom:20px">Vive · Invierte · Conecta</p>
-    <h2>Tu lugar en el corazón de Panamá te espera.</h2>
-    <p class="lead" style="max-width:56ch">Agenda una asesoría y descubre por qué Stay es una de las oportunidades de inversión más atractivas de la ciudad.</p>
+    <p class="eyebrow on-dark" style="margin-bottom:20px" data-en="Live · Invest · Connect">Vive · Invierte · Conecta</p>
+    <h2 data-en="Your place in the heart of Panama awaits.">Tu lugar en el corazón de Panamá te espera.</h2>
+    <p class="lead" style="max-width:56ch" data-en="Book a consultation and discover why Stay is one of the most attractive investment opportunities in the city.">Agenda una asesoría y descubre por qué Stay es una de las oportunidades de inversión más atractivas de la ciudad.</p>
     <div class="cta-row" style="justify-content:center">
-      <a class="btn btn-solid" href="https://wa.me/50767220624?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Stay." target="_blank" rel="noopener">Agendar asesoría</a>
-      <a class="btn btn-ghost" href="#">Descargar brochure</a>
+      <a class="btn btn-solid" href="https://wa.me/50767220624?text=Hola%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20Stay." target="_blank" rel="noopener" data-en="Book a consultation">Agendar asesoría</a>
+      <a class="btn btn-ghost" href="#" data-en="Download brochure">Descargar brochure</a>
     </div>
   </div>
 </section>
@@ -564,11 +571,11 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
     <div class="top">
       <div>
         <img src="assets/logos/stay-white.png" alt="Stay" style="height:34px;margin-bottom:14px">
-        <p style="max-width:34ch">Avenida Federico Boyd, Ciudad de Panamá.<br>Un edificio de Urbania Developer &amp; Emporium Developers.</p>
+        <p style="max-width:34ch" data-en="Avenida Federico Boyd, Panama City.<br>A building by Urbania Developer &amp; Emporium Developers.">Avenida Federico Boyd, Ciudad de Panamá.<br>Un edificio de Urbania Developer &amp; Emporium Developers.</p>
       </div>
-      <div class="fcol"><h4>Explorar</h4><a href="#proyecto">El proyecto</a><a href="#ubicacion">Ubicación</a><a href="#amenidades">Amenidades</a><a href="#inversion">Inversión</a></div>
-      <div class="fcol"><h4>Contacto</h4><a href="mailto:info@stay.com.pa">info@stay.com.pa</a><a href="tel:+50767220624">+507 6722‑0624</a><a href="https://stay.com.pa" target="_blank" rel="noopener">stay.com.pa</a></div>
-      <div class="fcol"><h4>Síguenos</h4>
+      <div class="fcol"><h4 data-en="Explore">Explorar</h4><a href="#proyecto" data-en="The project">El proyecto</a><a href="#ubicacion" data-en="Location">Ubicación</a><a href="#amenidades" data-en="Amenities">Amenidades</a><a href="#inversion" data-en="Investment">Inversión</a></div>
+      <div class="fcol"><h4 data-en="Contact">Contacto</h4><a href="mailto:info@stay.com.pa">info@stay.com.pa</a><a href="tel:+50767220624">+507 6722‑0624</a><a href="https://stay.com.pa" target="_blank" rel="noopener">stay.com.pa</a></div>
+      <div class="fcol"><h4 data-en="Follow us">Síguenos</h4>
         <div class="socials">
           <a href="https://www.instagram.com/staypty/" aria-label="Instagram" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.3" cy="6.7" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="https://www.facebook.com/people/Stay-Coliving/61570650735478/" aria-label="Facebook" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M14 9h3V6h-3c-1.7 0-3 1.3-3 3v2H9v3h2v6h3v-6h2.5l.5-3H14V9.2c0-.1.1-.2.2-.2z"/></svg></a>
@@ -577,8 +584,8 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
       </div>
     </div>
     <div style="display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:.74rem;color:rgba(255,255,255,.4)">
-      <span>© 2026 Stay. Todos los derechos reservados.</span>
-      <span>Representaciones artísticas conceptuales, sujetas a cambios sin previo aviso.</span>
+      <span data-en="© 2026 Stay. All rights reserved.">© 2026 Stay. Todos los derechos reservados.</span>
+      <span data-en="Conceptual artistic representations, subject to change without notice.">Representaciones artísticas conceptuales, sujetas a cambios sin previo aviso.</span>
     </div>
   </div>
 </footer>
@@ -605,20 +612,47 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
     }); });
   }
 
-  // Amenidades — galería interactiva
+  var LANG='es';
+
+  // Amenidades — galería interactiva (bilingüe)
   var ar=document.querySelector('[data-amen]');
+  var atabs=[], stage, nm, ds, setAmen=function(){};
   if(ar){
-    var stage=ar.querySelector('.amen-img'), nm=ar.querySelector('.amen-name'), ds=ar.querySelector('.amen-desc');
-    var atabs=[].slice.call(ar.querySelectorAll('.amen-tab'));
+    stage=ar.querySelector('.amen-img'); nm=ar.querySelector('.amen-name'); ds=ar.querySelector('.amen-desc');
+    atabs=[].slice.call(ar.querySelectorAll('.amen-tab'));
     atabs.forEach(function(b){ var im=new Image(); im.src=b.getAttribute('data-img'); }); // preload
-    atabs.forEach(function(b){ b.addEventListener('click',function(){
+    setAmen=function(b, swap){
       atabs.forEach(function(x){ x.classList.toggle('is-on', x===b); });
-      nm.textContent=b.getAttribute('data-name'); ds.textContent=b.getAttribute('data-desc');
+      nm.textContent=b.getAttribute(LANG==='en'?'data-name-en':'data-name');
+      ds.textContent=b.getAttribute(LANG==='en'?'data-desc-en':'data-desc');
       var src=b.getAttribute('data-img');
-      if(stage.getAttribute('src')===src) return;
+      if(swap===false || stage.getAttribute('src')===src) return;
       stage.style.opacity='0';
       setTimeout(function(){ stage.src=src; stage.style.opacity='1'; }, 160);
-    }); });
+    };
+    atabs.forEach(function(b){ b.addEventListener('click',function(){ setAmen(b); }); });
   }
+
+  // ---- Bilingüe ES / EN ----
+  var META={
+    es:{title:"Stay · Vivir y alquilar redefinido | Ciudad de Panamá", desc:"Stay — un edificio de lujo que redefine la experiencia de vivir y alquilar en el corazón de la Ciudad de Panamá. Por Urbania Developer & Emporium Developers."},
+    en:{title:"Stay · Living and renting, redefined | Panama City", desc:"Stay — a luxury building that redefines the experience of living and renting in the heart of Panama City. By Urbania Developer & Emporium Developers."}
+  };
+  var i18nEls=[].slice.call(document.querySelectorAll('[data-en]'));
+  i18nEls.forEach(function(el){ el.setAttribute('data-es', el.innerHTML); });
+  var langBtn=document.querySelector('[data-lang-toggle]');
+  function setLang(l){
+    LANG=l;
+    i18nEls.forEach(function(el){ el.innerHTML = el.getAttribute(l==='en'?'data-en':'data-es'); });
+    document.documentElement.lang=l;
+    document.title=META[l].title;
+    var m=document.querySelector('meta[name=description]'); if(m) m.setAttribute('content',META[l].desc);
+    if(ar){ var act=ar.querySelector('.amen-tab.is-on')||atabs[0]; if(act) setAmen(act,false); }
+    if(langBtn){ langBtn.textContent=(l==='en'?'ES':'EN'); langBtn.setAttribute('aria-label', l==='en'?'Ver en español':'View in English'); }
+    try{ localStorage.setItem('stayLang',l); }catch(e){}
+  }
+  if(langBtn){ langBtn.addEventListener('click',function(){ setLang(LANG==='en'?'es':'en'); }); }
+  var saved; try{ saved=localStorage.getItem('stayLang'); }catch(e){}
+  if(saved==='en') setLang('en');
 })();
 </script>
