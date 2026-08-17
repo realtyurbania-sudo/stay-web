@@ -42,9 +42,11 @@ header.nav.solid{background:rgba(246,244,239,.92);backdrop-filter:blur(10px);col
 header.nav.solid .nav-cta{border-color:var(--bronze);color:var(--bronze-d)}
 .burger{display:none;background:none;border:0;color:inherit;font-size:1.5rem;cursor:pointer}
 .nav-actions{display:flex;align-items:center;gap:22px}
-.lang-toggle{background:none;border:1px solid currentColor;color:inherit;font-family:var(--sans);font-size:.72rem;letter-spacing:.12em;font-weight:600;padding:.42rem .72rem;border-radius:2px;cursor:pointer;transition:opacity .25s;line-height:1}
-.lang-toggle:hover{opacity:.68}
-header.nav.solid .lang-toggle{border-color:var(--bronze);color:var(--bronze-d)}
+.lang-switch{display:inline-flex;border:1px solid currentColor;border-radius:3px;overflow:hidden}
+.lang-opt{background:none;border:0;color:inherit;font-family:var(--sans);font-size:.7rem;letter-spacing:.1em;font-weight:600;padding:.44rem .6rem;cursor:pointer;opacity:.6;transition:opacity .2s,background .2s,color .2s;line-height:1}
+.lang-opt:hover{opacity:1}
+.lang-opt.is-on{opacity:1;background:var(--bronze);color:#fff}
+header.nav.solid .lang-switch{border-color:var(--bronze)}
 
 /* ---------- hero ---------- */
 .hero{position:relative;min-height:100svh;display:flex;align-items:flex-end;color:#fff;overflow:hidden}
@@ -263,7 +265,10 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
         <a class="link-conn" href="#connection">Connection</a>
         <a class="nav-cta" href="#contacto" data-en="Contact">Contacto</a>
       </nav>
-      <button class="lang-toggle" type="button" data-lang-toggle aria-label="View in English">EN</button>
+      <div class="lang-switch" role="group" aria-label="Idioma · Language">
+        <button type="button" class="lang-opt is-on" data-lang="es" aria-label="Español">ES</button>
+        <button type="button" class="lang-opt" data-lang="en" aria-label="English">EN</button>
+      </div>
       <button class="burger" aria-label="Menú">☰</button>
     </div>
   </div>
@@ -640,7 +645,7 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
   };
   var i18nEls=[].slice.call(document.querySelectorAll('[data-en]'));
   i18nEls.forEach(function(el){ el.setAttribute('data-es', el.innerHTML); });
-  var langBtn=document.querySelector('[data-lang-toggle]');
+  var langOpts=[].slice.call(document.querySelectorAll('.lang-opt'));
   function setLang(l){
     LANG=l;
     i18nEls.forEach(function(el){ el.innerHTML = el.getAttribute(l==='en'?'data-en':'data-es'); });
@@ -648,10 +653,10 @@ header.nav.solid .link-conn::before{background:var(--bronze-d)}
     document.title=META[l].title;
     var m=document.querySelector('meta[name=description]'); if(m) m.setAttribute('content',META[l].desc);
     if(ar){ var act=ar.querySelector('.amen-tab.is-on')||atabs[0]; if(act) setAmen(act,false); }
-    if(langBtn){ langBtn.textContent=(l==='en'?'ES':'EN'); langBtn.setAttribute('aria-label', l==='en'?'Ver en español':'View in English'); }
+    langOpts.forEach(function(o){ o.classList.toggle('is-on', o.getAttribute('data-lang')===l); });
     try{ localStorage.setItem('stayLang',l); }catch(e){}
   }
-  if(langBtn){ langBtn.addEventListener('click',function(){ setLang(LANG==='en'?'es':'en'); }); }
+  langOpts.forEach(function(o){ o.addEventListener('click',function(){ setLang(o.getAttribute('data-lang')); }); });
   var saved; try{ saved=localStorage.getItem('stayLang'); }catch(e){}
   if(saved==='en') setLang('en');
 })();
